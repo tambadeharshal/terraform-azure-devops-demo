@@ -6,10 +6,9 @@ pool:
 
 steps:
 
-- task: TerraformInstaller@1
-  displayName: 'Install Terraform'
-  inputs:
-    terraformVersion: 'latest'
+- script: |
+    terraform version
+  displayName: 'Check Terraform'
 
 - task: AzureCLI@2
   displayName: 'Terraform Init and Validate'
