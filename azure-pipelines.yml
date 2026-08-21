@@ -6,9 +6,24 @@ pool:
 
 steps:
 
-- script: |
+- bash: |
+    set -e
+
+    TERRAFORM_VERSION="1.9.8"
+
+    wget -q "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+
+    unzip -o "terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+
+    sudo mv terraform /usr/local/bin/terraform
+
     terraform version
-  displayName: 'Check Terraform'
+  displayName: 'Install and Check Terraform'
+
+ - bash: |
+    terraform init
+    terraform plan
+  displayName: 'Terraform Init and Plan'
 
 - task: AzureCLI@2
   displayName: 'Terraform Init and Validate'
