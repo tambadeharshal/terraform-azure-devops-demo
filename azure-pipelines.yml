@@ -28,7 +28,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Terraform Init and Validate'
   inputs:
-    azureSubscription: 'Terraform-Azure-Connection'
+    azureSubscription: 'azure-terraform-connection'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -38,7 +38,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Terraform Plan'
   inputs:
-    azureSubscription: 'Terraform-Azure-Connection'
+    azureSubscription: 'azure-terraform-connection'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -47,7 +47,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Terraform Apply'
   inputs:
-    azureSubscription: 'Terraform-Azure-Connection'
+    azureSubscription: 'azure-terraform-connection'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
