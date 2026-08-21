@@ -34,7 +34,7 @@ steps:
       terraform version
 
       echo "=== Terraform Init ==="
-      terraform init
+      terraform init -upgrade
 
       echo "=== Terraform Validate ==="
       terraform validate
