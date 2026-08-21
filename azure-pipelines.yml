@@ -20,11 +20,11 @@ steps:
     terraform version
   displayName: 'Install and Check Terraform'
 
- - bash: |
+- bash: |
     terraform init
     terraform plan
   displayName: 'Terraform Init and Plan'
-
+  
 - task: AzureCLI@2
   displayName: 'Terraform Init and Validate'
   inputs:
